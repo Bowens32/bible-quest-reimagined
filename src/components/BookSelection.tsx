@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getProgress } from "@/lib/storage";
 import { Check } from "lucide-react";
+import { DailyQuote } from "./DailyQuote";
 
 interface BookSelectionProps {
   onSelectBook: (book: BibleBook) => void;
@@ -51,6 +52,8 @@ export function BookSelection({ onSelectBook }: BookSelectionProps) {
     <div className="pb-20">
       <h1 className="mb-1 font-serif text-3xl font-bold text-foreground">Read</h1>
       <p className="mb-6 text-sm text-muted-foreground">Choose a book to begin reading</p>
+
+      <DailyQuote />
 
       <Tabs defaultValue="old" className="w-full">
         <TabsList className="mb-4 w-full bg-secondary">

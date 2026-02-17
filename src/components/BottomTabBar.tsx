@@ -1,4 +1,4 @@
-import { Book, Gamepad2, User } from "lucide-react";
+import { Book, Gamepad2, User, Users, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface BottomTabBarProps {
@@ -9,6 +9,8 @@ interface BottomTabBarProps {
 const tabs = [
   { id: "read", label: "Read", icon: Book },
   { id: "play", label: "Play", icon: Gamepad2 },
+  { id: "community", label: "Community", icon: MessageCircle },
+  { id: "friends", label: "Friends", icon: Users },
   { id: "profile", label: "Profile", icon: User },
 ];
 
@@ -23,12 +25,12 @@ export function BottomTabBar({ activeTab, onTabChange }: BottomTabBarProps) {
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
               className={cn(
-                "flex flex-col items-center gap-1 px-4 py-1.5 transition-colors",
+                "flex flex-col items-center gap-0.5 px-2 py-1.5 transition-colors",
                 isActive ? "text-primary" : "text-muted-foreground"
               )}
             >
               <tab.icon className={cn("h-5 w-5", isActive && "text-gold")} />
-              <span className="text-xs font-medium">{tab.label}</span>
+              <span className="text-[10px] font-medium">{tab.label}</span>
             </button>
           );
         })}
